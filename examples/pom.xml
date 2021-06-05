@@ -22,10 +22,20 @@
             <artifactId>guava</artifactId>
         </dependency>
 
+        <dependency>
+            <groupId>cn.hutool</groupId>
+            <artifactId>hutool-all</artifactId>
+        </dependency>
+
         <!--        bloom filter java 支持，使用前必须在redis中安装RedisBloom模块-->
         <dependency>
             <groupId>com.redislabs</groupId>
             <artifactId>jrebloom</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.github.oshi</groupId>
+            <artifactId>oshi-core</artifactId>
         </dependency>
     </dependencies>
 
