@@ -1,5 +1,6 @@
 package org.zchzh.examples.systeminfo;
 
+import cn.hutool.core.util.NumberUtil;
 import lombok.Data;
 import org.zchzh.examples.systeminfo.model.*;
 import oshi.SystemInfo;

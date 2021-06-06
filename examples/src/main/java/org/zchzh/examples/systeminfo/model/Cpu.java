@@ -1,5 +1,6 @@
 package org.zchzh.examples.systeminfo.model;
 
+import cn.hutool.core.util.NumberUtil;
 import lombok.Data;
 import oshi.hardware.CentralProcessor;
 import oshi.util.Util;
@@ -19,31 +20,58 @@ public class Cpu {
     private int cpuNum;
 
     /**
-     * CPU总的使用率
+     * CPU运行耗费的总时间
      */
     private double total;
 
     /**
-     * CPU系统使用率
+     * CPU系统使用的时间
      */
     private double sys;
 
     /**
-     * CPU用户使用率
+     * CPU用户使用的时间
      */
     private double used;
 
     /**
-     * CPU当前等待率
+     * CPU当前等待的时间
      */
     private double wait;
 
     /**
-     * CPU当前空闲率
+     * CPU当前空闲的时间
      */
     private double free;
 
+    /**
+     * CPU总的使用率
+     */
+    private double totalRate;
+
+    /**
+     * CPU系统使用率
+     */
+    private double sysRate;
+
+    /**
+     * CPU用户使用率
+     */
+    private double usedRate;
+
+    /**
+     * CPU当前等待率
+     */
+    private double waitRate;
+
+    /**
+     * CPU当前空闲率
+     */
+    private double freeRate;
+
     private static final int OSHI_WAIT_SECOND = 1000;
+
+    private static final double TOTAL_RATE = 1d;
 
 
     public Cpu(CentralProcessor processor) {
@@ -66,5 +94,14 @@ public class Cpu {
         this.used  = user;
         this.wait = iowait;
         this.free = idle;
+        this.totalRate = getRate(TOTAL_RATE);
+        this.sysRate = getRate(sys / total);
+        this.usedRate = getRate(used / total);
+        this.waitRate = getRate(wait / total);
+        this.freeRate = getRate(free / total);
+    }
+
+    private double getRate(double number) {
+        return NumberUtil.round(NumberUtil.mul(number, 100), 2).doubleValue();
     }
 }
