@@ -52,8 +52,11 @@ public class Server {
     }
 
     public static void main(String[] args) {
+        long start = System.currentTimeMillis();
         Server server = new Server();
 
         System.out.println(server);
+
+        System.out.println(System.currentTimeMillis() - start);
     }
 }
