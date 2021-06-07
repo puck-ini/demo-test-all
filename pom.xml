@@ -107,7 +107,7 @@
             <dependency>
                 <groupId>com.google.guava</groupId>
                 <artifactId>guava</artifactId>
-                <version>28.0-jre</version>
+                <version>29.0-jre</version>
             </dependency>
 
             <!--        bloom filter java 支持，使用前必须在redis中安装RedisBloom模块-->
