@@ -4,12 +4,12 @@
     <modelVersion>4.0.0</modelVersion>
     <packaging>pom</packaging>
 
-<!--    <parent>-->
-<!--        <groupId>org.springframework.boot</groupId>-->
-<!--        <artifactId>spring-boot-starter-parent</artifactId>-->
-<!--        <version>2.4.4</version>-->
-<!--        <relativePath/> &lt;!&ndash; lookup parent from repository &ndash;&gt;-->
-<!--    </parent>-->
+    <!--    <parent>-->
+    <!--        <groupId>org.springframework.boot</groupId>-->
+    <!--        <artifactId>spring-boot-starter-parent</artifactId>-->
+    <!--        <version>2.4.4</version>-->
+    <!--        <relativePath/> &lt;!&ndash; lookup parent from repository &ndash;&gt;-->
+    <!--    </parent>-->
     <groupId>org.zchzh</groupId>
     <artifactId>demo-test-all</artifactId>
     <version>0.0.1-SNAPSHOT</version>
@@ -89,7 +89,7 @@
             </dependency>
 
 
-<!--            discovery-->
+            <!--            discovery-->
 
             <dependency>
                 <groupId>com.alibaba.nacos</groupId>
@@ -103,7 +103,7 @@
                 <version>${zk.version}</version>
             </dependency>
 
-<!--            bloomfilter-->
+            <!--            bloomfilter-->
             <dependency>
                 <groupId>com.google.guava</groupId>
                 <artifactId>guava</artifactId>
