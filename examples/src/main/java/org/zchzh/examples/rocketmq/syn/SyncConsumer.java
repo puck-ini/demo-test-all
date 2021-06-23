@@ -14,12 +14,12 @@ import java.util.List;
  * @author zengchzh
  * @date 2021/6/23
  */
-public class SynConsumer {
+public class SyncConsumer {
 
     public static void main(String[] args) throws MQClientException {
-        DefaultMQPushConsumer consumer = new DefaultMQPushConsumer("test_syn");
+        DefaultMQPushConsumer consumer = new DefaultMQPushConsumer("test_sync");
         consumer.setNamesrvAddr("localhost:9876");
-        consumer.subscribe("TopicTest", "*");
+        consumer.subscribe("TopicSync", "*");
         consumer.registerMessageListener(new MessageListenerConcurrently() {
             @Override
             public ConsumeConcurrentlyStatus consumeMessage(List<MessageExt> msgs, ConsumeConcurrentlyContext context) {

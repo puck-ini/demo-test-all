@@ -16,14 +16,14 @@ import java.util.Arrays;
  * @date 2021/6/23
  * 同步消息发送
  */
-public class SynProducer {
+public class SyncProducer {
 
     public static void main(String[] args) throws MQClientException, UnsupportedEncodingException, RemotingException, InterruptedException, MQBrokerException {
-        DefaultMQProducer producer = new DefaultMQProducer("test_syn");
+        DefaultMQProducer producer = new DefaultMQProducer("test_sync");
         producer.setNamesrvAddr("localhost:9876");
         producer.start();
         for (int i = 0; i < 100; i++) {
-            Message msg = new Message("TopicTest",
+            Message msg = new Message("TopicSync",
                     "TagA",
                     ("Hello RocketMQ" + i).getBytes(RemotingHelper.DEFAULT_CHARSET)
             );
