@@ -27,6 +27,7 @@ public class SeqConsumer {
           如果非第一次启动，那么按照上次消费的位置继续消费
          */
         consumer.setConsumeFromWhere(ConsumeFromWhere.CONSUME_FROM_FIRST_OFFSET);
+        // 过滤消息
         consumer.subscribe("TopicSeq", "TagA || TagC || TagD");
         consumer.registerMessageListener(new MessageListenerOrderly() {
 
