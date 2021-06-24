@@ -11,6 +11,7 @@ import java.io.UnsupportedEncodingException;
 /**
  * @author zengchzh
  * @date 2021/6/23
+ * 单向发送消息，不关心结果
  */
 public class OneWayProducer {
     public static void main(String[] args) throws MQClientException, RemotingException, InterruptedException, UnsupportedEncodingException {
