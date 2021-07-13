@@ -8,17 +8,17 @@ import java.util.UUID;
  * @author zengchzh
  * @date 2021/7/13
  */
-public class DemoEventPulisher {
+public class DemoEventPublisher {
 
     private List<DemoListener> listenerList = new ArrayList<>();
 
     public void monitor() {
         DemoEvent demoEvent = new DemoEvent(this, UUID.randomUUID().toString());
-        pulishEvent(demoEvent);
+        publishEvent(demoEvent);
     }
 
 
-    protected void pulishEvent(DemoEvent event) {
+    protected void publishEvent(DemoEvent event) {
         List<DemoListener> copyListenerList = new ArrayList<>(listenerList);
         for (DemoListener listener : copyListenerList) {
             listener.listener(event);
@@ -38,8 +38,8 @@ public class DemoEventPulisher {
     }
 
     public static void main(String[] args) {
-        DemoEventPulisher pulisher = new DemoEventPulisher();
-        pulisher.addListener(new DemoListener());
-        pulisher.monitor();
+        DemoEventPublisher publisher = new DemoEventPublisher();
+        publisher.addListener(new DemoListener());
+        publisher.monitor();
     }
 }
