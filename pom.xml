@@ -39,6 +39,7 @@
         <hutool.version>5.4.5</hutool.version>
         <spi.auto.service.version>1.0-rc4</spi.auto.service.version>
         <oshi.version>3.9.1</oshi.version>
+        <easypoi.version>4.3.0</easypoi.version>
     </properties>
 
     <dependencyManagement>
@@ -142,19 +143,19 @@
             <dependency>
                 <groupId>cn.afterturn</groupId>
                 <artifactId>easypoi-base</artifactId>
-                <version>4.1.0</version>
+                <version>${easypoi.version}</version>
             </dependency>
             <!--耦合了spring-mvc 基于AbstractView,极大的简化spring-mvc下的导出功能-->
             <dependency>
                 <groupId>cn.afterturn</groupId>
                 <artifactId>easypoi-web</artifactId>
-                <version>4.1.0</version>
+                <version>${easypoi.version}</version>
             </dependency>
             <!--基础注解包,作用与实体对象上,拆分后方便maven多工程的依赖管理-->
             <dependency>
                 <groupId>cn.afterturn</groupId>
                 <artifactId>easypoi-annotation</artifactId>
-                <version>4.1.0</version>
+                <version>${easypoi.version}</version>
             </dependency>
 
         </dependencies>

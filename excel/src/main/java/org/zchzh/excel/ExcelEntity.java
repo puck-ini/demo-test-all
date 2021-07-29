@@ -31,6 +31,12 @@ public class ExcelEntity implements Serializable {
     @Excel(name = "地址")
     private String address;
 
+    /**
+     * 测试数据脱敏
+     */
+    @Excel(name = "手机号", desensitizationRule = "3_4")
+    private String phone;
+
     @Excel(name = "年龄")
     private Integer age;
 

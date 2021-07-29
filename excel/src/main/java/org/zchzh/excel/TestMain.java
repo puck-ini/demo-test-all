@@ -21,7 +21,8 @@ import java.util.stream.IntStream;
 public class TestMain {
 
     public static void main(String[] args) throws Exception {
-        testImport();
+        testExport();
+//        testImport();
     }
 
 
@@ -55,6 +56,7 @@ public class TestMain {
                     .birth(new Date())
                     .info("info" + i)
                     .weight(new Random().nextDouble())
+                    .phone("123789782917")
                     .build());
         });
         return dataList;
