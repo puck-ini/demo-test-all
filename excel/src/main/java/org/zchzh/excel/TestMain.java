@@ -22,7 +22,7 @@ public class TestMain {
 
     public static void main(String[] args) throws Exception {
         testExport();
-//        testImport();
+        testImport();
     }
 
 
@@ -57,6 +57,8 @@ public class TestMain {
                     .info("info" + i)
                     .weight(new Random().nextDouble())
                     .phone("123789782917")
+                    .status1("SAVE")
+                    .status2(Status.SAVE)
                     .build());
         });
         return dataList;

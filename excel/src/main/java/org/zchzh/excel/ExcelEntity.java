@@ -46,5 +46,17 @@ public class ExcelEntity implements Serializable {
     @Excel(name = "出生日期", format = "yyyy-MM-dd HH:mm:ss")
     private Date birth;
 
+    /**
+     * 测试下拉框，读取时无法读出字符串
+     */
+    @Excel(name = "状态1", replace = {"CREATE_0", "SAVE_1", "DELETE_2"}, addressList = true)
+    private String status1;
+
+    /**
+     * 测试枚举，读取时是null
+     */
+    @Excel(name = "状态2", replace = {"CREATE_0", "SAVE_1", "DELETE_2"}, addressList = true)
+    private Status status2;
+
 
 }
