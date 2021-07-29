@@ -22,6 +22,7 @@
         <module>java-demo</module>
         <module>common-util</module>
         <module>examples</module>
+        <module>zookeeper</module>
     </modules>
 
     <properties>
@@ -33,6 +34,7 @@
         <fastjson.version>1.2.73</fastjson.version>
         <nacos.version>1.3.0</nacos.version>
         <zk.version>2.7.0</zk.version>
+        <zkclient.version>0.10</zkclient.version>
         <hutool.version>5.4.5</hutool.version>
         <spi.auto.service.version>1.0-rc4</spi.auto.service.version>
         <oshi.version>3.9.1</oshi.version>
@@ -101,6 +103,12 @@
                 <groupId>org.apache.curator</groupId>
                 <artifactId>curator-recipes</artifactId>
                 <version>${zk.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.101tec</groupId>
+                <artifactId>zkclient</artifactId>
+                <version>${zkclient.version}</version>
             </dependency>
 
             <!--            bloomfilter-->
