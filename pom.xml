@@ -23,6 +23,7 @@
         <module>common-util</module>
         <module>examples</module>
         <module>zookeeper</module>
+        <module>excel</module>
     </modules>
 
     <properties>
@@ -135,6 +136,25 @@
                 <groupId>org.apache.rocketmq</groupId>
                 <artifactId>rocketmq-client</artifactId>
                 <version>4.7.1</version>
+            </dependency>
+
+            <!--导入导出的工具包,可以完成Excel导出,导入,Word的导出,Excel的导出功能-->
+            <dependency>
+                <groupId>cn.afterturn</groupId>
+                <artifactId>easypoi-base</artifactId>
+                <version>4.1.0</version>
+            </dependency>
+            <!--耦合了spring-mvc 基于AbstractView,极大的简化spring-mvc下的导出功能-->
+            <dependency>
+                <groupId>cn.afterturn</groupId>
+                <artifactId>easypoi-web</artifactId>
+                <version>4.1.0</version>
+            </dependency>
+            <!--基础注解包,作用与实体对象上,拆分后方便maven多工程的依赖管理-->
+            <dependency>
+                <groupId>cn.afterturn</groupId>
+                <artifactId>easypoi-annotation</artifactId>
+                <version>4.1.0</version>
             </dependency>
 
         </dependencies>
