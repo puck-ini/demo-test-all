@@ -46,9 +46,11 @@ public class ZkLock implements Lock {
 
     @Override
     public void lock() {
-        boolean isLock = tryLock();
-        while (!isLock) {
-            isLock = tryLock();
+        if (tryLock()) {
+            return;
+        } {
+            waitUnlock();
+            lock();
         }
     }
 
@@ -67,12 +69,10 @@ public class ZkLock implements Lock {
         Collections.sort(children);
         String minNode = children.get(0);
         boolean isEquals = currentNode.equals(rootNode + minNode);
-        while (!isEquals) {
+        if (!isEquals) {
             int index = Collections.binarySearch(children, currentNode.substring(rootNode.length()));
             String lastNodeChild = children.get(index - 1);
             preNode = rootNode + lastNodeChild;
-            waitUnlock();
-            isEquals = tryLock();
         }
         return isEquals;
     }
