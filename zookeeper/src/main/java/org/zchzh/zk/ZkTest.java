@@ -13,6 +13,7 @@ public class ZkTest {
     private static final Integer NUM = 10;
 
     private static final CountDownLatch LATCH = new CountDownLatch(NUM);
+
     public static void main(String[] args) {
         IntStream.rangeClosed(1, NUM).forEach( i -> {
             new Thread(new TestRunnable()).start();
