@@ -24,6 +24,7 @@
         <module>examples</module>
         <module>zookeeper</module>
         <module>excel</module>
+        <module>word</module>
     </modules>
 
     <properties>
@@ -40,6 +41,7 @@
         <spi.auto.service.version>1.0-rc4</spi.auto.service.version>
         <oshi.version>3.9.1</oshi.version>
         <easypoi.version>4.3.0</easypoi.version>
+        <poi-tl.version>1.10.0</poi-tl.version>
     </properties>
 
     <dependencyManagement>
@@ -156,6 +158,12 @@
                 <groupId>cn.afterturn</groupId>
                 <artifactId>easypoi-annotation</artifactId>
                 <version>${easypoi.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.deepoove</groupId>
+                <artifactId>poi-tl</artifactId>
+                <version>${poi-tl.version}</version>
             </dependency>
 
         </dependencies>
