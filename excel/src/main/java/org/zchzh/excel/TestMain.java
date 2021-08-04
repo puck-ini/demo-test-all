@@ -27,7 +27,7 @@ public class TestMain {
 
 
     public static void testExport() throws IOException {
-        @Cleanup FileOutputStream fos = new FileOutputStream("C:\\Users\\zengchzh\\Desktop\\testfile\\test.xls");
+        @Cleanup FileOutputStream fos = new FileOutputStream("D:\\testdata\\excel\\test.xls");
         ExportParams params = new ExportParams();
 //        params.setTitle("测试信息表");
         params.setSheetName("测试信息表1");
@@ -36,7 +36,7 @@ public class TestMain {
     }
 
     public static void testImport() throws Exception {
-        @Cleanup FileInputStream fis = new FileInputStream("C:\\Users\\zengchzh\\Desktop\\testfile\\test.xls");
+        @Cleanup FileInputStream fis = new FileInputStream("D:\\testdata\\excel\\test.xls");
         ImportParams params = new ImportParams();
         params.setHeadRows(1);
 //        params.setImportFields(new String[]{"编号"});
