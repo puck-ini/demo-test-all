@@ -25,6 +25,7 @@
         <module>zookeeper</module>
         <module>excel</module>
         <module>word</module>
+        <module>grpc</module>
     </modules>
 
     <properties>
@@ -42,6 +43,8 @@
         <oshi.version>3.9.1</oshi.version>
         <easypoi.version>4.3.0</easypoi.version>
         <poi-tl.version>1.10.0</poi-tl.version>
+        <grpc.version>1.29.0</grpc.version>
+        <protobuf.version>3.11.0</protobuf.version>
     </properties>
 
     <dependencyManagement>
@@ -164,6 +167,24 @@
                 <groupId>com.deepoove</groupId>
                 <artifactId>poi-tl</artifactId>
                 <version>${poi-tl.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>io.grpc</groupId>
+                <artifactId>grpc-netty-shaded</artifactId>
+                <version>${grpc.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>io.grpc</groupId>
+                <artifactId>grpc-protobuf</artifactId>
+                <version>${grpc.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>io.grpc</groupId>
+                <artifactId>grpc-stub</artifactId>
+                <version>${grpc.version}</version>
             </dependency>
 
         </dependencies>
