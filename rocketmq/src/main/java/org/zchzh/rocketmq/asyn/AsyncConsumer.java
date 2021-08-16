@@ -1,4 +1,4 @@
-package org.zchzh.examples.rocketmq.asyn;
+package org.zchzh.rocketmq.asyn;
 
 import org.apache.rocketmq.client.consumer.DefaultMQPushConsumer;
 import org.apache.rocketmq.client.consumer.listener.ConsumeConcurrentlyContext;

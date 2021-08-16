@@ -1,4 +1,4 @@
-package org.zchzh.examples.rocketmq.seq;
+package org.zchzh.rocketmq.seq;
 
 import org.apache.rocketmq.client.consumer.DefaultMQPushConsumer;
 import org.apache.rocketmq.client.consumer.listener.ConsumeOrderlyContext;

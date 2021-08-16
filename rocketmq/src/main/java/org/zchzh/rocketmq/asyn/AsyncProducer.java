@@ -1,4 +1,4 @@
-package org.zchzh.examples.rocketmq.asyn;
+package org.zchzh.rocketmq.asyn;
 
 import org.apache.rocketmq.client.exception.MQBrokerException;
 import org.apache.rocketmq.client.exception.MQClientException;

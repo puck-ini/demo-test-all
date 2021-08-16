@@ -27,6 +27,7 @@
         <module>word</module>
         <module>grpc</module>
         <module>bloom-filter</module>
+        <module>rocketmq</module>
     </modules>
 
     <properties>

@@ -1,4 +1,4 @@
-package org.zchzh.examples.rocketmq.syn;
+package org.zchzh.rocketmq.oneway;
 
 import org.apache.rocketmq.client.consumer.DefaultMQPushConsumer;
 import org.apache.rocketmq.client.consumer.listener.ConsumeConcurrentlyContext;
@@ -7,19 +7,18 @@ import org.apache.rocketmq.client.consumer.listener.MessageListenerConcurrently;
 import org.apache.rocketmq.client.exception.MQClientException;
 import org.apache.rocketmq.common.message.MessageExt;
 
-import java.util.Arrays;
 import java.util.List;
 
 /**
  * @author zengchzh
- * @date 2021/6/23
+ * @date 2021/6/24
  */
-public class SyncConsumer {
+public class OneWayConsumer {
 
     public static void main(String[] args) throws MQClientException {
-        DefaultMQPushConsumer consumer = new DefaultMQPushConsumer("test_sync");
+        DefaultMQPushConsumer consumer = new DefaultMQPushConsumer("test_one_way");
         consumer.setNamesrvAddr("localhost:9876");
-        consumer.subscribe("TopicSync", "*");
+        consumer.subscribe("TopicOneWay", "*");
         consumer.registerMessageListener(new MessageListenerConcurrently() {
             @Override
             public ConsumeConcurrentlyStatus consumeMessage(List<MessageExt> msgs, ConsumeConcurrentlyContext context) {

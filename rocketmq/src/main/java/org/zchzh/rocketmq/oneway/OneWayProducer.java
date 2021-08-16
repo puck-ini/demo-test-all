@@ -1,4 +1,4 @@
-package org.zchzh.examples.rocketmq.oneway;
+package org.zchzh.rocketmq.oneway;
 
 import org.apache.rocketmq.client.exception.MQClientException;
 import org.apache.rocketmq.client.producer.DefaultMQProducer;

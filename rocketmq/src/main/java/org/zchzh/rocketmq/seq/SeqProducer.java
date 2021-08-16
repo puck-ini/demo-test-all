@@ -1,4 +1,4 @@
-package org.zchzh.examples.rocketmq.seq;
+package org.zchzh.rocketmq.seq;
 
 import lombok.Data;
 import lombok.ToString;
@@ -13,7 +13,6 @@ import org.apache.rocketmq.remoting.exception.RemotingException;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Date;
 import java.util.List;
 
