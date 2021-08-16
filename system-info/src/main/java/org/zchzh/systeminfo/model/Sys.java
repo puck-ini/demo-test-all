@@ -1,4 +1,4 @@
-package org.zchzh.examples.systeminfo.model;
+package org.zchzh.systeminfo.model;
 
 import lombok.Data;
 

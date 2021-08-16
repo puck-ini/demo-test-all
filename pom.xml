@@ -28,6 +28,7 @@
         <module>grpc</module>
         <module>bloom-filter</module>
         <module>rocketmq</module>
+        <module>system-info</module>
     </modules>
 
     <properties>

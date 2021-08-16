@@ -1,4 +1,4 @@
-package org.zchzh.examples.systeminfo.model;
+package org.zchzh.systeminfo.model;
 
 import cn.hutool.core.date.DateUtil;
 import cn.hutool.core.util.NumberUtil;

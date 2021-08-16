@@ -1,12 +1,9 @@
-package org.zchzh.examples.systeminfo;
+package org.zchzh.systeminfo;
 
-import cn.hutool.core.util.NumberUtil;
 import lombok.Data;
-import org.zchzh.examples.systeminfo.model.*;
+import org.zchzh.systeminfo.model.*;
 import oshi.SystemInfo;
 import oshi.hardware.HardwareAbstractionLayer;
-
-import java.util.Arrays;
 
 /**
  * @author zengchzh
