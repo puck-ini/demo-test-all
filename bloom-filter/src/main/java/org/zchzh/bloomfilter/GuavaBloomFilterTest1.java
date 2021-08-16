@@ -1,12 +1,11 @@
-package org.zchzh.examples.bloomfilter;
+package org.zchzh.bloomfilter;
 
 import com.google.common.hash.BloomFilter;
 import com.google.common.hash.Funnels;
 
 /**
  * @author zengchzh
- * @date 2020/9/29 9:28
- * @description TODO
+ * @date 2020/9/29
  */
 
 

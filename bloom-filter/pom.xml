@@ -9,14 +9,8 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>examples</artifactId>
-
+    <artifactId>bloom-filter</artifactId>
     <dependencies>
-        <dependency>
-            <groupId>org.projectlombok</groupId>
-            <artifactId>lombok</artifactId>
-        </dependency>
-
         <dependency>
             <groupId>com.google.guava</groupId>
             <artifactId>guava</artifactId>
@@ -27,14 +21,10 @@
             <artifactId>hutool-all</artifactId>
         </dependency>
 
+        <!--        bloom filter java 支持，使用前必须在redis中安装RedisBloom模块-->
         <dependency>
-            <groupId>com.github.oshi</groupId>
-            <artifactId>oshi-core</artifactId>
-        </dependency>
-
-        <dependency>
-            <groupId>org.apache.rocketmq</groupId>
-            <artifactId>rocketmq-client</artifactId>
+            <groupId>com.redislabs</groupId>
+            <artifactId>jrebloom</artifactId>
         </dependency>
     </dependencies>
 

@@ -1,11 +1,10 @@
-package org.zchzh.examples.bloomfilter;
+package org.zchzh.bloomfilter;
 
 import java.util.BitSet;
 
 /**
  * @author zengchzh
- * @date 2020/10/26 21:43
- * @description TODO
+ * @date 2020/10/26
  */
 public class BloomFilterTest {
 

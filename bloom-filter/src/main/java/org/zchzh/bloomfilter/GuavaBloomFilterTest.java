@@ -1,12 +1,11 @@
-package org.zchzh.examples.bloomfilter;
+package org.zchzh.bloomfilter;
 
 import com.google.common.hash.BloomFilter;
 import com.google.common.hash.Funnels;
 
 /**
  * @author zengchzh
- * @date 2020/10/26 21:51
- * @description TODO
+ * @date 2020/10/26
  */
 public class GuavaBloomFilterTest {
 

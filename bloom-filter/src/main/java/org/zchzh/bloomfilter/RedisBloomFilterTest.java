@@ -1,12 +1,12 @@
-package org.zchzh.examples.bloomfilter;
+package org.zchzh.bloomfilter;
 
 import io.rebloom.client.Client;
 
 
 /**
  * @author zengchzh
- * @date 2020/10/26 22:04
- * @description 使用RedisBloom测试布隆过滤器，使用前需要在redis中添加RedisBloom模块
+ * @date 2020/10/26
+ * 使用RedisBloom测试布隆过滤器，使用前需要在redis中添加RedisBloom模块
  */
 public class RedisBloomFilterTest {
 
