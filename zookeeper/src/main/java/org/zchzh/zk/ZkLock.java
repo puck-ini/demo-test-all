@@ -1,8 +1,11 @@
 package org.zchzh.zk;
 
+import org.I0Itec.zkclient.IZkChildListener;
 import org.I0Itec.zkclient.IZkDataListener;
+import org.I0Itec.zkclient.IZkStateListener;
 import org.I0Itec.zkclient.ZkClient;
 import org.I0Itec.zkclient.serialize.SerializableSerializer;
+import org.apache.zookeeper.Watcher;
 
 import java.io.File;
 import java.util.Collections;
@@ -85,7 +88,29 @@ public class ZkLock implements Lock {
 
             @Override
             public void handleDataDeleted(String s) throws Exception {
-                countDownLatch.countDown();;
+                countDownLatch.countDown();
+            }
+        };
+        IZkChildListener listener1 = new IZkChildListener() {
+            @Override
+            public void handleChildChange(String s, List<String> list) throws Exception {
+
+            }
+        };
+        IZkStateListener listener2 = new IZkStateListener() {
+            @Override
+            public void handleStateChanged(Watcher.Event.KeeperState keeperState) throws Exception {
+
+            }
+
+            @Override
+            public void handleNewSession() throws Exception {
+
+            }
+
+            @Override
+            public void handleSessionEstablishmentError(Throwable throwable) throws Exception {
+
             }
         };
         zkClient.subscribeDataChanges(preNode, listener);

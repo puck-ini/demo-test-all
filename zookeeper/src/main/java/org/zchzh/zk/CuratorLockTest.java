@@ -24,10 +24,28 @@ public class CuratorLockTest {
     private static final String LOCK_NODE = "/zklock";
 
     public static void main(String[] args) {
-        IntStream.rangeClosed(1, NUM).forEach(i -> {
-            new Thread(new TestRunnable()).start();
-            LATCH.countDown();
-        });
+//        IntStream.rangeClosed(1, NUM).forEach(i -> {
+//            new Thread(new TestRunnable()).start();
+//            LATCH.countDown();
+//        });
+
+        RetryPolicy retryPolicy = new ExponentialBackoffRetry(1000,3 );
+        CuratorFramework client = CuratorFrameworkFactory.newClient("127.0.0.1:2181", retryPolicy);
+        client.start();
+        InterProcessMutex mutex = new InterProcessMutex(client, LOCK_NODE);
+        try {
+            mutex.acquire();
+            Thread.sleep(20000);
+            System.out.println(Thread.currentThread().getName() + " : lock success");
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            try {
+                mutex.release();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
     }
 
     static class TestRunnable implements Runnable {
