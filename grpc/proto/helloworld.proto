@@ -5,6 +5,8 @@ option java_outer_classname = "HelloWorld";
 
 service Greeter {
   rpc SayHello(HelloRequest) returns(HelloReply) {}
+
+  rpc send(stream MsgRequest) returns(stream MsgResponse) {}
 }
 
 message HelloRequest {
@@ -13,4 +15,12 @@ message HelloRequest {
 
 message HelloReply {
   string message = 1;
+}
+
+message MsgRequest {
+  string reqId = 1;
+}
+
+message MsgResponse {
+  string resId = 1;
 }

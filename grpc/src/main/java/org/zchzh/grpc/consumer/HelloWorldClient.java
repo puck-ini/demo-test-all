@@ -8,7 +8,10 @@ import io.grpc.stub.StreamObserver;
 import org.zchzh.grpc.api.GreeterGrpc;
 import org.zchzh.grpc.api.HelloWorld;
 
+import java.util.Arrays;
+import java.util.UUID;
 import java.util.concurrent.*;
+import java.util.stream.IntStream;
 
 /**
  * @author zengchzh
@@ -31,7 +34,7 @@ public class HelloWorldClient {
         return ManagedChannelBuilder.forAddress(host, port).usePlaintext().build();
     }
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
         HelloWorldClient client = new HelloWorldClient("localhost", 50051);
         String user;
         user = "world0";
@@ -40,6 +43,9 @@ public class HelloWorldClient {
         client.doAsync(user);
         user = "world2";
         client.doFuture(user);
+        System.out.println("----------------------");
+        client.testSend();
+        TimeUnit.SECONDS.sleep(30);
     }
 
 
@@ -108,5 +114,30 @@ public class HelloWorldClient {
             e.printStackTrace();
         }
 
+    }
+
+    public void testSend() {
+        GreeterGrpc.GreeterStub stub = GreeterGrpc.newStub(getChannel());
+        StreamObserver<HelloWorld.MsgRequest> requestStreamObserver = stub.send(new StreamObserver<HelloWorld.MsgResponse>() {
+
+            @Override
+            public void onNext(HelloWorld.MsgResponse msgResponse) {
+                System.out.println("msgResponse = " + msgResponse);
+            }
+
+            @Override
+            public void onError(Throwable throwable) {
+                System.out.println("throwable = " + throwable);
+            }
+
+            @Override
+            public void onCompleted() {
+                System.out.println("client completed");
+            }
+        });
+
+        IntStream.rangeClosed(1, 10).forEach(i -> {
+            requestStreamObserver.onNext(HelloWorld.MsgRequest.newBuilder().setReqId(UUID.randomUUID().toString()).build());
+        });
     }
 }

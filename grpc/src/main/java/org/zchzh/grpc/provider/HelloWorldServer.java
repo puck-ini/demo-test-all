@@ -16,12 +16,16 @@ public class HelloWorldServer {
 
     private int port = 50051;
 
-    private Server server = ServerBuilder.forPort(port).addService(new HelloWorldImpl()).build();
+    private HelloWorldImpl helloWorld = new HelloWorldImpl();
+
+    private Server server = ServerBuilder.forPort(port).addService(helloWorld).build();
 
     public void start() {
         try {
             server.start();
-        } catch (IOException e) {
+            TimeUnit.SECONDS.sleep(20);
+            helloWorld.test();
+        } catch (IOException | InterruptedException e) {
             e.printStackTrace();
         }
         Runtime.getRuntime().addShutdownHook(new Thread() {
