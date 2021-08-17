@@ -46,8 +46,8 @@
         <oshi.version>3.9.1</oshi.version>
         <easypoi.version>4.3.0</easypoi.version>
         <poi-tl.version>1.10.0</poi-tl.version>
-        <grpc.version>1.29.0</grpc.version>
-        <protobuf.version>3.11.0</protobuf.version>
+        <grpc.version>1.39.0</grpc.version>
+        <protobuf.version>3.17.3</protobuf.version>
     </properties>
 
     <dependencyManagement>
