@@ -105,6 +105,9 @@ public class NacosConfig {
         config.getConfig(dataId);
         TimeUnit.SECONDS.sleep(10);
         config.removeListener(dataId);
+        config.publishConfig(dataId, content1);
+        TimeUnit.MILLISECONDS.sleep(50);
+        config.getConfig(dataId);
         config.removeConfig(dataId);
         TimeUnit.SECONDS.sleep(10);
     }
