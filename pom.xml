@@ -29,6 +29,7 @@
         <module>bloom-filter</module>
         <module>rocketmq</module>
         <module>system-info</module>
+        <module>nacos</module>
     </modules>
 
     <properties>
