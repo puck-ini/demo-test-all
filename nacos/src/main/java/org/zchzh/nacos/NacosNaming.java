@@ -80,9 +80,9 @@ public class NacosNaming {
         }
     }
 
-    public void getHealthyInstance(ServiceInfo info) {
+    public void getHealthyInstance(String serviceName) {
         try {
-            Instance instance = namingService.selectOneHealthyInstance(info.getServiceName());
+            Instance instance = namingService.selectOneHealthyInstance(serviceName);
             System.out.println("healthy instance = " + instance);
         } catch (NacosException e) {
             e.printStackTrace();
