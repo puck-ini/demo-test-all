@@ -1,6 +1,7 @@
 package org.zchzh.mapstruct;
 
 import java.math.BigDecimal;
+import java.util.Date;
 
 /**
  * @author zengchzh
@@ -20,6 +21,8 @@ public class DemoDO {
     private DemoEnum demoEnum;
 
     private DemoDesc demoDesc;
+
+    private Date createTime;
 
 
     public String getName() {
@@ -70,6 +73,14 @@ public class DemoDO {
         this.demoDesc = demoDesc;
     }
 
+    public Date getCreateTime() {
+        return createTime;
+    }
+
+    public void setCreateTime(Date createTime) {
+        this.createTime = createTime;
+    }
+
     @Override
     public String toString() {
         return "DemoDO{" +
@@ -79,6 +90,7 @@ public class DemoDO {
                 ", value=" + value +
                 ", demoEnum=" + demoEnum +
                 ", demoDesc=" + demoDesc +
+                ", createTime=" + createTime +
                 '}';
     }
 }

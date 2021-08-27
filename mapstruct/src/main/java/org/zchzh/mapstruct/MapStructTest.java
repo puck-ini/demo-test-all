@@ -2,6 +2,7 @@ package org.zchzh.mapstruct;
 
 import java.math.BigDecimal;
 import java.util.Arrays;
+import java.util.Date;
 
 /**
  * @author zengchzh
@@ -16,6 +17,7 @@ public class MapStructTest {
         demoDO.setName("123weq");
         demoDO.setNum(new BigDecimal("123.9077"));
         demoDO.setValue(123.321);
+        demoDO.setCreateTime(new Date());
         DemoDesc demoDesc = new DemoDesc();
         demoDesc.setContent("123&*(&(*");
         demoDesc.setLen(123);

@@ -2,6 +2,7 @@ package org.zchzh.mapstruct;
 
 
 import java.math.BigDecimal;
+import java.util.Date;
 
 /**
  * @author zengchzh
@@ -21,6 +22,13 @@ public class DemoDTO {
     private String demoEnum;
 
     private String demoDesc;
+
+    private String demoDescJson;
+
+    private String defaultString;
+
+    private String createTime;
+
 
     public String getName() {
         return name;
@@ -70,6 +78,30 @@ public class DemoDTO {
         this.demoDesc = demoDesc;
     }
 
+    public String getDemoDescJson() {
+        return demoDescJson;
+    }
+
+    public void setDemoDescJson(String demoDescJson) {
+        this.demoDescJson = demoDescJson;
+    }
+
+    public String getDefaultString() {
+        return defaultString;
+    }
+
+    public void setDefaultString(String defaultString) {
+        this.defaultString = defaultString;
+    }
+
+    public String getCreateTime() {
+        return createTime;
+    }
+
+    public void setCreateTime(String createTime) {
+        this.createTime = createTime;
+    }
+
     @Override
     public String toString() {
         return "DemoDTO{" +
@@ -79,6 +111,9 @@ public class DemoDTO {
                 ", value=" + value +
                 ", demoEnum='" + demoEnum + '\'' +
                 ", demoDesc='" + demoDesc + '\'' +
+                ", demoDescJson='" + demoDescJson + '\'' +
+                ", defaultString='" + defaultString + '\'' +
+                ", createTime=" + createTime +
                 '}';
     }
 }
