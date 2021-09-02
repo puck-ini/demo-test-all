@@ -32,6 +32,8 @@
         <module>nacos</module>
         <module>mapstruct</module>
         <module>java-agent</module>
+        <module>java-atomic</module>
+        <module>redis</module>
     </modules>
 
     <properties>
@@ -52,6 +54,7 @@
         <grpc.version>1.39.0</grpc.version>
         <protobuf.version>3.17.3</protobuf.version>
         <mapstruct.version>1.4.2.Final</mapstruct.version>
+        <redis.version>3.3.2</redis.version>
     </properties>
 
     <dependencyManagement>
@@ -200,6 +203,12 @@
                 <groupId>org.mapstruct</groupId>
                 <artifactId>mapstruct</artifactId>
                 <version>${mapstruct.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.redisson</groupId>
+                <artifactId>redisson</artifactId>
+                <version>${redis.version}</version>
             </dependency>
 
         </dependencies>

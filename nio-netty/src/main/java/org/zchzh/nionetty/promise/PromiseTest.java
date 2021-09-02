@@ -17,7 +17,8 @@ public class PromiseTest {
         System.out.println(System.currentTimeMillis());
         EventExecutor eventExecutor = GlobalEventExecutor.INSTANCE;
         Promise<MessageInfo> messageInfoPromise = new DefaultProgressivePromise<>(eventExecutor);
-        // 监听并行顺序执行
+//        Promise<MessageInfo> messageInfoPromise = ImmediateEventExecutor.INSTANCE.newPromise();
+                // 监听并行顺序执行
         messageInfoPromise.addListener(new MsgListener());
         messageInfoPromise.addListener(new DescListener());
 //        messageInfoPromise.addListener(new InfoListener());
