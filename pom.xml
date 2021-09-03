@@ -34,6 +34,7 @@
         <module>java-agent</module>
         <module>java-atomic</module>
         <module>redis</module>
+        <module>java-future</module>
     </modules>
 
     <properties>
