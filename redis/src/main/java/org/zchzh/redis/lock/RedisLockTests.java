@@ -1,7 +1,8 @@
-package org.zchzh.redis;
+package org.zchzh.redis.lock;
 
 import org.redisson.api.RLock;
 import org.redisson.api.RedissonClient;
+import org.zchzh.redis.TestClient;
 
 import java.util.Arrays;
 import java.util.concurrent.CountDownLatch;

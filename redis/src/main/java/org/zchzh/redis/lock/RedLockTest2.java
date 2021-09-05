@@ -1,4 +1,4 @@
-package org.zchzh.redis;
+package org.zchzh.redis.lock;
 
 import org.redisson.Redisson;
 import org.redisson.RedissonRedLock;
@@ -10,9 +10,9 @@ import java.util.concurrent.TimeUnit;
 
 /**
  * @author zengchzh
- * @date 2021/1/21
+ * @date 2021/1/23
  */
-public class RedLockTest {
+public class RedLockTest2 {
 
     /**
      * redission 使用的是 hash 存储分布式锁 hash 中的属性名为 "UUID:threadId" 值为 threadId
@@ -45,18 +45,17 @@ public class RedLockTest {
         try {
             System.out.println("start");
             // 500ms拿不到锁, 就认为获取锁失败。10000ms即10s是锁失效时间。trylock 分布式锁设置的唯一值为 UUID:threadId
-            // 不设置锁失效时间则该锁为重入锁，默认失效时间为30s, 同时锁重入时设置的默认失效时间为30s
+            // 不设置锁失效时间则该锁为重入锁，默认失效时间为30s
             // 将阻塞时间设置长才可以在别的客户端释放锁是申请到锁
 //            isLock = redLock.tryLock(500, 10000, TimeUnit.MILLISECONDS);
-            isLock = redLock.tryLock(80000,100000, TimeUnit.MILLISECONDS);
+            isLock = redLock.tryLock(60000,10000, TimeUnit.MILLISECONDS);
             if (isLock) {
                 // do something
                 for (int i = 0; i < 1; i++) {
-                    Thread.sleep(9000);
-                    System.out.println("test1");
+                    Thread.sleep(10000);
+                    System.out.println("test2");
                 }
             }
-//            isLock = redLock.tryLock(80000,100000, TimeUnit.MILLISECONDS);
             System.out.println("do end");
         } catch (Exception e) {
             e.printStackTrace();
@@ -70,7 +69,5 @@ public class RedLockTest {
 
     public static void main(String[] args) {
         test();
-
-//        System.out.println(UUID.randomUUID().toString());
     }
 }

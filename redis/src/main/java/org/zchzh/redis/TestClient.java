@@ -12,14 +12,14 @@ public class TestClient {
 
     public static RedissonClient getSingleClient() {
         Config config = new Config();
-        config.useSingleServer().setAddress("127.0.0.1:6379");
+        config.useSingleServer().setAddress("redis://127.0.0.1:6379");
         return Redisson.create(config);
     }
 
 
     public static RedissonClient getClusterClient() {
         Config config = new Config();
-        config.useClusterServers().addNodeAddress("127.0.0.1:6379", "127.0.0.1:6379");
+        config.useClusterServers().addNodeAddress("redis://127.0.0.1:6379", "redis://127.0.0.1:6379");
         return Redisson.create(config);
     }
 }

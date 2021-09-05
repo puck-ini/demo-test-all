@@ -1,4 +1,4 @@
-package org.zchzh.redis;
+package org.zchzh.redis.list;
 
 import org.redisson.api.RList;
 import org.redisson.api.RedissonClient;
