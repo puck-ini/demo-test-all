@@ -8,7 +8,7 @@ import java.util.Date;
  * @date 2021/8/27
  */
 
-public class DemoDO {
+public class DemoDO extends BaseDO {
 
     private String name;
 

@@ -18,6 +18,8 @@ public class MapStructTest {
         demoDO.setNum(new BigDecimal("123.9077"));
         demoDO.setValue(123.321);
         demoDO.setCreateTime(new Date());
+        demoDO.setMsg1("msg1");
+        demoDO.setMsg2("msg2");
         DemoDesc demoDesc = new DemoDesc();
         demoDesc.setContent("123&*(&(*");
         demoDesc.setLen(123);
