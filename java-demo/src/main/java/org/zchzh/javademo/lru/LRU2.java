@@ -70,16 +70,16 @@ public class LRU2<K, V> {
         lru.put(1,"a");
         lru.put(2,"b");
         lru.put(3,"c");
-        System.out.println(lru.map.keySet());
+        System.out.println(lru.list);
         lru.put(4,"d");
-        System.out.println(lru.map.keySet());
+        System.out.println(lru.list);
         lru.put(3,"c");
-        System.out.println(lru.map.keySet());
+        System.out.println(lru.list);
         lru.put(3,"c");
-        System.out.println(lru.map.keySet());
+        System.out.println(lru.list);
         lru.put(3,"c");
-        System.out.println(lru.map.keySet());
+        System.out.println(lru.list);
         lru.put(5,"e");
-        System.out.println(lru.map.keySet());
+        System.out.println(lru.list);
     }
 }
