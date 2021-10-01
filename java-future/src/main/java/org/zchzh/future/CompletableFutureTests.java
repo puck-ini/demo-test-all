@@ -11,9 +11,21 @@ import java.util.stream.Stream;
  * @author zengchzh
  * @date 2021/5/27
  */
-public class CompleteFutureTests {
+public class CompletableFutureTests {
 
     public static void main(String[] args) throws InterruptedException {
+//        CompletableFuture<String> future = CompletableFuture.supplyAsync(new Supplier<String>() {
+//            @Override
+//            public String get() {
+//                return "hello world";
+//            }
+//        });
+//        CompletableFuture.runAsync(new Runnable() {
+//            @Override
+//            public void run() {
+//                System.out.println("hello world");
+//            }
+//        });
         CompletableFuture<String> future = new CompletableFuture<>();
 //        CompletableFuture<String> future = CompletableFuture.supplyAsync(new Supplier<String>() {
 //            @Override
