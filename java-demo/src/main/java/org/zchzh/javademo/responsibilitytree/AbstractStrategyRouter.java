@@ -1,4 +1,4 @@
-package org.zchzh.examples.responsibilitytree;
+package org.zchzh.javademo.responsibilitytree;
 
 
 

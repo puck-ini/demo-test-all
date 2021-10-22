@@ -81,6 +81,12 @@ public class BloomFilterTest {
     }
 
     public static void main(String[] args) {
-
+        BloomFilterTest filterTest = new BloomFilterTest();
+        String test1 = "12341412ewqewq";
+        String test2 = "e21321dsa*)(32";
+        filterTest.add(test1);
+        filterTest.add(test2);
+        System.out.println(filterTest.contains(test1));
+        System.out.println(filterTest.contains("1"));
     }
 }
