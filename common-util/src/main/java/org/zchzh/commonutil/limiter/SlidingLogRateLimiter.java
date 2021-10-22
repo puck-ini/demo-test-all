@@ -10,6 +10,8 @@ import java.util.TreeMap;
 /**
  * @author zengchzh
  * @date 2021/5/25
+ *
+ * 滑动日志，与滑动窗口差不多
  */
 
 public class SlidingLogRateLimiter implements RateLimiter {
