@@ -1,11 +1,14 @@
 package org.zchzh.future;
 
-import java.util.Arrays;
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+
+import java.time.LocalDateTime;
 import java.util.Objects;
 import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.TimeUnit;
 import java.util.function.*;
-import java.util.stream.Stream;
 
 /**
  * @author zengchzh
@@ -165,5 +168,117 @@ public class CompletableFutureTests {
         System.out.println("isCompletedExceptionally： " + future.isCompletedExceptionally());
 //        System.out.println("future result : " + future.getNow("123"));
         TimeUnit.SECONDS.sleep(5);
+    }
+
+
+    private CompletableFuture<String> strFuture;
+
+    
+
+    @Test
+    @BeforeEach
+    public void initFuture() {
+        System.out.println("init");
+        strFuture = new CompletableFuture<>();
+    }
+
+    @Test
+    @AfterEach
+    public void completeFuture() throws InterruptedException {
+//        System.out.println(Thread.currentThread().getName());
+        strFuture.complete("hello future");
+        System.out.println("complete");
+        TimeUnit.MILLISECONDS.sleep(100);
+    }
+
+    @Test
+//    @AfterEach
+    public void completeExceptionally() throws InterruptedException {
+        strFuture.completeExceptionally(new RuntimeException("test exception"));
+        System.out.println("complete exception");
+        TimeUnit.MILLISECONDS.sleep(100);
+    }
+
+    @Test
+    public void testWhenComplete() {
+//        System.out.println(Thread.currentThread().getName());
+        strFuture.whenComplete(new BiConsumer<String, Throwable>() {
+            @Override
+            public void accept(String s, Throwable throwable) {
+                if (Objects.nonNull(s)) {
+                    System.out.println("testWhenComplete ： " + LocalDateTime.now() + ", result : " + s);
+                } else if (Objects.nonNull(throwable)) {
+                    System.out.println("testWhenComplete ： " + LocalDateTime.now()+ " : " + throwable.getMessage());
+                }
+            }
+        });
+    }
+
+    @Test
+    public void testWhenCompleteAsync() {
+        strFuture.whenCompleteAsync(new BiConsumer<String, Throwable>() {
+            @Override
+            public void accept(String s, Throwable throwable) {
+                if (Objects.nonNull(s)) {
+                    System.out.println("testWhenCompleteAsync ： " + LocalDateTime.now() + ", result : " + s);
+                } else if (Objects.nonNull(throwable)) {
+                    System.out.println("testWhenCompleteAsync ： " + LocalDateTime.now()+ " : " + throwable.getMessage());
+                }
+            }
+        });
+    }
+
+    @Test
+    public void testThenAccept() {
+        strFuture.thenAccept(new Consumer<String>() {
+            @Override
+            public void accept(String s) {
+                System.out.println("testThenAccept ： " + LocalDateTime.now() + ", result : " + s);
+            }
+        });
+    }
+
+    @Test
+    public void testThenAcceptAsync() {
+        strFuture.thenAcceptAsync(new Consumer<String>() {
+            @Override
+            public void accept(String s) {
+                System.out.println("testThenAccept ： " + LocalDateTime.now() + ", result : " + s);
+            }
+        });
+    }
+
+
+    @Test
+    public void testThenApply() {
+        strFuture.thenApply(new Function<String, String>() {
+            @Override
+            public String apply(String s) {
+                System.out.println("testThenApply ： " + LocalDateTime.now() + ", result : " + s);
+                return s + " thenApply";
+            }
+        });
+    }
+
+    @Test
+    public void testThenApplyAsync() {
+        strFuture.thenApplyAsync(new Function<String, String>() {
+            @Override
+            public String apply(String s) {
+                System.out.println("testThenApplyAsync ： " + LocalDateTime.now() + ", result : " + s);
+                return s + " thenApplyAsync";
+            }
+        });
+    }
+
+    @Test
+    public void testExceptionally() {
+        strFuture.exceptionally(new Function<Throwable, String>() {
+            @Override
+            public String apply(Throwable throwable) {
+                System.out.println("testThenApplyAsync ： " + LocalDateTime.now() + " : " + throwable.getMessage());
+                return throwable.getMessage();
+            }
+        });
     }
 }
