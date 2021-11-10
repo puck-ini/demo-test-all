@@ -1,0 +1,23 @@
+[
+  {
+    "name":"beforeMethod",
+    "className":"org.zchzh.aop.StartTimeBeforeMethod"
+  },
+  {
+    "name":"afterMethod",
+    "className":"org.zchzh.aop.EndTimeAfterMethod"
+  },
+  {
+    "name":"testService",
+    "className":"org.zchzh.aop.TestService"
+  },
+  {
+    "name":"testServiceProxy",
+    "className":"org.zchzh.aop.core.ProxyFactoryBean",
+    "target":"testService",
+    "interceptorNames":[
+      "beforeMethod",
+      "afterMethod"
+    ]
+  }
+]
