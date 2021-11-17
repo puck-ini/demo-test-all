@@ -37,6 +37,7 @@
         <module>java-future</module>
         <module>jsonwebtoken</module>
         <module>disruptor</module>
+        <module>jmh</module>
     </modules>
 
     <properties>
@@ -62,6 +63,7 @@
         <jwt.version>0.11.2</jwt.version>
         <disruptor.version>3.4.2</disruptor.version>
         <junit.version>5.5.2</junit.version>
+        <jmh.version>1.33</jmh.version>
     </properties>
 
     <dependencyManagement>
@@ -272,6 +274,17 @@
                 <artifactId>junit-jupiter-engine</artifactId>
                 <version>${junit.version}</version>
                 <!--            <scope>test</scope>-->
+            </dependency>
+
+            <dependency>
+                <groupId>org.openjdk.jmh</groupId>
+                <artifactId>jmh-core</artifactId>
+                <version>${jmh.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.openjdk.jmh</groupId>
+                <artifactId>jmh-generator-annprocess</artifactId>
+                <version>${jmh.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
