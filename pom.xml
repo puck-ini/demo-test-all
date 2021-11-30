@@ -38,6 +38,7 @@
         <module>jsonwebtoken</module>
         <module>disruptor</module>
         <module>jmh</module>
+        <module>java-schedule-task</module>
     </modules>
 
     <properties>
