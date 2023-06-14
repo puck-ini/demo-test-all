@@ -149,7 +149,7 @@
             <dependency>
                 <groupId>com.google.guava</groupId>
                 <artifactId>guava</artifactId>
-                <version>29.0-jre</version>
+                <version>32.0.0-jre</version>
             </dependency>
 
             <!--        bloom filter java 支持，使用前必须在redis中安装RedisBloom模块-->
